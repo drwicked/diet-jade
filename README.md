@@ -1,4 +1,4 @@
-# ~~diet-jade~~diet-pug
+# diet-pug
 
 Forked from [https://github.com/mnzt/diet-jade](mnzt's repo).
 
@@ -11,7 +11,7 @@ Learn how to use it at the engine's website:
 ## **Install**
 
 ```
-npm install diet-jade
+npm install diet-pug
 ```
 
 [![NPM](https://nodei.co/npm/diet-jade.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/diet-jade/)
@@ -22,7 +22,7 @@ npm install diet-jade
 ```js
 // Require Diet server
 var server = require('diet')
-// Require diet-jade plugin
+// Require diet-pug plugin
 var pug = require('diet-pug')({path: app.path + '/static/pug/'})
 
 // Instantiate server
@@ -31,17 +31,17 @@ var app = server()
 app.listen('http://localhost:8000')
 
 // Assign jade plugin to the header
-app.header(jade)
+app.header(pug)
 
 // Create a route
 app.get('/', function($) {
-  // Render jade file! this will render ./yourConfiguredDirectory/index.pug
+  // Render pug file! this will render ./yourConfiguredDirectory/index.pug
   $.data.message = 'This is awesome!'
   $.render('index')
 })
 
 app.get('/profile', function ($) {
-  // Render jade file! this will render ./.../yourConfiguredDirectory/profile.pug
+  // Render pug file! this will render ./.../yourConfiguredDirectory/profile.pug
   $.render('profile')
 })
 ```
