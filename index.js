@@ -1,13 +1,13 @@
 const fs = require('fs');
-const jade = require('jade')
+const pug = require('pug')
 
 /*
  * Usage:
- * var jade = require('diet-jade')({ path: app.path+'/static/jade' })
+ * var pug = require('diet-pug')({ path: app.path+'/static/pug' })
  *
- * app.header(jade)
+ * app.header(pug)
  *
- * $.render('index') => $.render('index.jade')
+ * $.render('index') => $.render('index.pug')
  *
  */
 
@@ -18,9 +18,9 @@ module.exports = function(options) {
     $.render = function(filename) {
       $.header('Content-Type', 'text/html; charset=UTF-8')
       console.log(filename);
-      filename ? (filename.indexOf('.jade')>-1 ? (options.file = filename) : (options.file = filename + '.jade')) : ($.error('No jade file specified'))
+      filename ? (filename.indexOf('.pug')>-1 ? (options.file = filename) : (options.file = filename + '.pug')) : ($.error('No pug file specified'))
       var path = (options.path.slice(-1) === '/') ? options.path : options.path + '/'
-      var fn = jade.compileFile(path + options.file, {
+      var fn = pug.compileFile(path + options.file, {
         pretty: true,
       })
       var html = fn($.data)
