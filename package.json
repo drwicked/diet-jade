@@ -31,7 +31,7 @@
     "url": "http://github.com/mnzt"
   },
   "dependencies": {
-    "pug": "^2.0.0 || 2.0.0-beta6"
+    "pug": "2.0.0-rc.4"
   },
   "main": "index.js",
   "engines": {
